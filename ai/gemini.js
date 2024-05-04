@@ -7,7 +7,14 @@ module.exports = (async (content) => {
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
   const result = await model.generateContent(content);
   const response = await result.response;
-  const text = response.text().replace(/```json\n(.*?)\n```/s, '$1').replace(/``` JSON\n(.*?)\n```/s, '$1');
-  console.log('...Finished AI Process!')
+
+  function extractJSON(text) {
+    const prefixRegex = /^(JSON| JSON|json| json)\s*/;
+    const inner = text.replace(/```(.*?)```/s, '$1');
+    return inner.replace(prefixRegex, ''); 
+  }
+
+  const text = extractJSON(response.text());
+  console.log('...Finished AI Process!', text)
   return JSON.parse(text);
   })
