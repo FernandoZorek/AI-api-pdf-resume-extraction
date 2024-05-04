@@ -1,0 +1,72 @@
+Given the extracted text from a PDF resume, structure the information into a well-organized JSON format. The JSON should include key sections and fields commonly found in resumes, such as:
+
+Contact Information: Full Name, Email Address, Phone Number, Location
+Professional Summary: A brief overview of the applicant's skills, experience, and career goals.
+Work Experience: A list of previous employment positions, including company names, job titles, dates of employment, and key responsibilities.
+Education: A list of educational qualifications, including institutions attended, degrees obtained, and relevant coursework.
+Skills: A list of technical and soft skills relevant to the applicant's field.
+Ensure the JSON is properly formatted, with clear and consistent naming conventions for the fields and sections. The JSON should be optimized for easy readability and machine processing."
+
+Example JSON Structure: 
+
+{
+  "contactInformation": {
+    "fullName": "John Doe",
+    "emailAddress": "johndoe@example.com",
+    "phoneNumber": "+1 (555) 555-5555",
+    "location": "New York, NY"
+  },
+  "professionalSummary": "Experienced software developer ...",
+  "workExperience": [
+    {
+      "company": "Acme Corporation",
+      "title": "Senior Software Engineer",
+      "dates": "2018-Present",
+      "responsibilities": [
+        "Develop and maintain high-performance ...",
+        "Design and implement scalable...",
+        "Collaborate with cross-functional..."
+      ]
+    },
+    {
+      "company": "Beta Solutions",
+      "title": "Software Engineer",
+      "dates": "2016-2018",
+      "responsibilities": [
+        "Developed and maintained web ..."
+        "Contributed to the design and ..."
+        "Performed unit testing and bug ..."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Stanford University",
+      "degree": "Master of Science in Computer Science",
+      "dates": "2014-2016",
+      "coursework": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Distributed Systems"
+      ]
+    },
+    {
+      "institution": "University of California, Berkeley",
+      "degree": "Bachelor of Science in Computer Science",
+      "dates": "2010-2014",
+      "coursework": [
+        "Data Structures and Algorithms",
+        "Object-Oriented Programming",
+        "Computer Networks"
+      ]
+    }
+  ],
+  "skills": [
+    "Programming Languages: Java, Python, JavaScript (React)",
+    "Cloud Platforms: AWS, Azure",
+    "Databases: MySQL, PostgreSQL",
+    "Soft Skills: Problem-solving, Communication, Teamwork"
+  ]
+}
+
+Text to extracted Information:
