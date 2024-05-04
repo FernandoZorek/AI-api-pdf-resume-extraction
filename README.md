@@ -78,7 +78,7 @@ This project serves as a foundation for building your own resume data extraction
 - Integrating with different AI APIs
 - Implementing additional data extraction and enrichment techniques
 - Using a different database or data storage mechanism
-D- eveloping a user interface for interacting with the application
+- Developing a user interface for interacting with the application
 
 
 ## License
