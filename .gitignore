@@ -1,0 +1,39 @@
+# Node.js project files
+node_modules/
+.cache/
+.env
+
+# Testing and development files
+test/
+coverage/
+npm_debug.log
+yarn.lock
+yarn-error.log
+
+# IDE and editor files
+.idea/
+.vscode/
+.DS_Store
+*.suo
+*.iml
+
+# Logs and temporary files
+logs/
+tmp/
+
+# Generated files
+dist/
+build/
+app/
+
+# OS-specific files
+*.DS_Store
+Thumbs.db
+
+# Local environment configuration
+.envrc
+.env.local
+
+# Database files (if using a local database)
+db.sqlite
+db.test.sqlite

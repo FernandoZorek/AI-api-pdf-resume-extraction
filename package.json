@@ -1,0 +1,19 @@
+{
+  "name": "AI-api-pdf-resume-extraction",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:FernandoZorek/AI-api-pdf-resume-extraction.git",
+  "author": "Fernando Zorek <fernandozorek@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^4.10.0",
+    "database-driver": "^1.1.3",
+    "fs-js": "^1.0.6",
+    "mongodb": "^6.6.0",
+    "pdf-parse": "^1.1.1"
+  },
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js"
+  }
+}
