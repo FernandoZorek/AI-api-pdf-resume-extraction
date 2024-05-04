@@ -7,7 +7,7 @@ class ResumeProcessor {
   async processResume(filePath) {
     const resumeText = await this.pdfParser.parsePdf(filePath);
     const enhancedData = await this.aiEnhancer.enhanceResumeData(resumeText);
-    return JSON.parse(enhancedData);
+    return enhancedData;
   }
 }
 

@@ -11,7 +11,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      CHATGPT_API_KEY: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"  # Replace with your actual API key
+      # CHATGPT_API_KEY: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"   # Replace with your actual API key
+      GEMINI_API_KEY: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"  # Replace with your actual API key
       DB_HOST: mongo:27017
       DB_NAME: resumes
       DB_COLLECTION: resume_data
