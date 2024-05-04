@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  resume-data-extractor:
+    image: node:20
+    working_dir: /app
+    command: bash -c "yarn && yarn run dev"
+    volumes:
+      - .:/app:z
+    container_name: resume-data-extractor
+    ports:
+      - "3000:3000"
+    environment:
+      CHATGPT_API_KEY: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"  # Replace with your actual API key
+      DB_HOST: mongo:27017
+      DB_NAME: resumes
+      DB_COLLECTION: resume_data
+      DB_ROOT_USERNAME: root
+      DB_ROOT_PASSWORD: example
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - resume-data:/data/db
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: resumes
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    container_name: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH: ""
+
+volumes:
+  resume-data:
