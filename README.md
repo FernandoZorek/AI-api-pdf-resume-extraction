@@ -10,10 +10,11 @@
 
 ## Features
 
-- Extracts resume data from PDF files
-- Enhances extracted data using AI APIs
-- Normalizes and structures resume data
-- Saves normalized data to a database
+- Check new files in the ./files folder to start the process;
+- Extracts resume data from PDF files;
+- Enhances extracted data using AI APIs;
+- Normalizes and structures resume data;
+- Saves normalized data to a database.
 
 ## Tech
 
@@ -24,7 +25,8 @@ This project uses several open source projects to function correctly::
 - [Openai] - The fastest and most powerful platform for building AI products. Build transformative AI experiences powered by industry-leading models and tools;
 - [fs-js] - A native module for effectively working with files built on top of Node's famous fs module;
 - [pdf-parse] - Pure javascript cross-platform module to extract texts from PDFs;
-- [MongoDB] - MongoDB is a source-available, cross-platform, document-oriented database program. Classified as a NoSQL database product, MongoDB utilizes JSON-like documents with optional schemas.;
+- [Chokidar] - Chokidar does still rely on the Node.js core fs module, but when using fs.watch and fs.watchFile for watching, it normalizes the events it receives, often checking for truth by getting file stats and/or dir contents;
+- [MongoDB] - MongoDB is a source-available, cross-platform, document-oriented database program. Classified as a NoSQL database product, MongoDB utilizes JSON-like documents with optional schemas;
 
 ## Installation
 
@@ -92,5 +94,6 @@ MIT
 [Node.js]: <https://nodejs.org/docs/latest/api/>
 [fs-js]: <https://www.npmjs.com/package/fs-js>
 [pdf-parse]: <https://www.npmjs.com/package/pdf-parse>
+[Chokidar]: <https://www.npmjs.com/package/chokidar>
 [MongoDB]: <https://www.mongodb.com/>
 
