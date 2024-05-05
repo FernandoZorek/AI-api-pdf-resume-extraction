@@ -20,7 +20,6 @@ module.exports = (async () => {
     const resumeProcessor = new ResumeProcessor(pdfParser, aiEnhancer);
     const normalizedData = await resumeProcessor.processResume(pdfFilePath);
     const databaseManager = new DatabaseManager();
-    await databaseManager.create();
     await databaseManager.save(normalizedData);
     const renameFile = fsPromises.rename;
     await renameFile(pdfFilePath, pdfFilePath + '.old');
