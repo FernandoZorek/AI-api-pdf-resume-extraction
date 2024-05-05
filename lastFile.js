@@ -25,7 +25,7 @@ module.exports = (async () => {
     await renameFile(pdfFilePath, pdfFilePath + '.old');
   }
 
-  const watchedFolderLoteFiles = chokidar.watch(PATH_FILES, {
+  const watchedFolder = chokidar.watch(PATH_FILES, {
     ignoreInitial: false,
     ignored: '*.old'
   })
@@ -35,17 +35,17 @@ module.exports = (async () => {
     return files.filter(f => extname(basename(f)) === extension)
   }
 
-  watchedFolderLoteFiles.on('ready', () => console.log(`Waiting for files in volume ${PATH_FILES}`))
+  watchedFolder.on('ready', () => console.log(`Waiting for files in volume ${PATH_FILES}`))
 
-  watchedFolderLoteFiles.on('add', (path) => {
+  watchedFolder.on('add', (path) => {
     if (filterFileListByExtension([path], '.pdf').length > 0) {
       return sendToQueue(fs.readFileSync(path), path)
     }
   })
 
-  watchedFolderLoteFiles.on('error', (error) => {
-    logger.fatal(error)
-    process.exit(1)
+  watchedFolder.on('error', (error) => {
+    console.log(error)
+    throw new Error('watched Folder Error')
   })
 
   console.log('...Finished AI Process!')
