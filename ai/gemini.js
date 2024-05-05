@@ -15,6 +15,6 @@ module.exports = (async (content) => {
   }
 
   const text = extractJSON(response.text());
-  console.log('...Finished AI Process!', text)
+  console.log('...Finished AI Process!')
   return JSON.parse(text);
   })
